@@ -1,0 +1,12 @@
+{%extends "parent.html"%}
+{%block title%}Add Laptop{%endblock%}
+{%block frame%}
+    <h1>Add to Stock</h1>
+    <form action="/new" method="post">
+        <input type="text" name="model" placeholder="model name">
+        <input type="text" name="ram" placeholder="ram size">
+        <input type="text" name="ssd" placeholder="ssd">
+        <input type="text" name="cost" placeholder="price">
+        <input type="submit" value="Add to stock">
+    </form>
+{%endblock%}

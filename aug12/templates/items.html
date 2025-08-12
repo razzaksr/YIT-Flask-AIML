@@ -1,0 +1,10 @@
+{%macro rows(value)%}
+    <tr>
+        <!-- filters -->
+        <td>{{value.model|upper}}</td><td>{{value.ram}}</td>
+        <td>{{value.ssd}}</td><td>{{value.cost|round(1)}}</td>
+        <td>
+            <a href="/delete/{{value.model}}">Discontinue</a>
+        </td>
+    </tr>
+{%endmacro%}

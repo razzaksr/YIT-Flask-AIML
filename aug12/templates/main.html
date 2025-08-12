@@ -1,0 +1,18 @@
+{%extends "parent.html"%}
+{%block title%}View all Laptops{%endblock%}
+{%block frame%}
+{% from "items.html" import rows %}
+    <h1>Current laptops in stock</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th><th>RAM</th><th>SSD</th><th>Cost</th><th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stocks %}
+                {{rows(item)}}
+            {%endfor%}
+        </tbody>
+    </table>
+{%endblock%}
