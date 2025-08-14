@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund Transfer</title>
+    <style>span{color: red;}</style>
+</head>
+<body>
+    <form method="post" novalidate>
+        <!-- csrf token  -->
+        {{pay.hidden_tag()}}
+        <div>
+            <p>{{pay.fromAccount.label}}</p>
+            <p>{{pay.fromAccount()}}</p>
+            <p>
+                {% for error in pay.fromAccount.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{pay.toAccount.label}}</p>
+            <p>{{pay.toAccount()}}</p>
+            <p>
+                {% for error in pay.toAccount.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{pay.confirmAccount.label}}</p>
+            <p>{{pay.confirmAccount()}}</p>
+            <p>
+                {% for error in pay.confirmAccount.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{pay.ifsc.label}}</p>
+            <p>{{pay.ifsc()}}</p>
+            <p>
+                {% for error in pay.ifsc.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{pay.amount.label}}</p>
+            <p>{{pay.amount()}}</p>
+            <p>
+                {% for error in pay.amount.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{pay.type.label}}</p>
+            <p>{{pay.type()}}</p>
+        </div>
+        <div>
+            <p>{{pay.submit()}}</p>
+        </div>
+    </form>
+</body>
+</html>
